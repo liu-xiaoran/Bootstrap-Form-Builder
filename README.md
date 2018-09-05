@@ -22,12 +22,12 @@ It's hosted on github pages [here](https://github.com/liu-xiaoran/Bootstrap-Form
 
 ### Adding new form elements
 
-* In the [js/data/folder] are yaml files, each of which corresponds to a tab in the form builder.
+* In the [ js/data/folder ] are yaml files, each of which corresponds to a tab in the form builder.
 * If you just want to add a new element you need to:
   - describe it in one of these files
   - parse the yaml to json using parse.rb in the same folder
-  - create a corresponding template in the [templates/snippet directory]
-  - add the template to [snippet-templates.js]
-* If you want to add a new tab, you'll also need to adjust the [app.js file] to make sure the tab is loaded.
+  - create a corresponding template in the [ templates/snippet directory ]
+  - add the template to [ snippet-templates.js ]
+* If you want to add a new tab, you'll also need to adjust the [ app.js file ] to make sure the tab is loaded.
 
 Don't forget to switch to main.js rather than main-built.js, or the changes you make before compiling with require.js won't show up!

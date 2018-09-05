@@ -48,6 +48,7 @@ define([
     }
 
     , saveHandler : function(boundContext) {
+     
       return function(mouseEvent) {
         mouseEvent.preventDefault();
         var fields = $(".popover .field");

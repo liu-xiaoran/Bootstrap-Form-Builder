@@ -16,13 +16,20 @@ define([
       this.on("add", this.giveUniqueId);
     }
 
-    , giveUniqueId: function(snippet){
+    , giveUniqueId: function(snippet,thats,sttat){
+      if(sttat.jump===1){
+        var snippetTypeOrg = snippet.attributes.fields.id.value.split("-");
+        if(snippetTypeOrg.length>1){
+          this.counter[snippetTypeOrg[0]] = snippetTypeOrg[1]-0;
+        }
+        return;
+      }
+      // 自增ID
       if(!snippet.get("fresh")) {
         return;
       }
       snippet.set("fresh", false);
       var snippetType = snippet.attributes.fields.id.value;
-
       if(typeof this.counter[snippetType] === "undefined") {
         this.counter[snippetType] = 0;
       } else {

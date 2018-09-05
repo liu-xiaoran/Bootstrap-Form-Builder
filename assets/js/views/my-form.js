@@ -11,7 +11,7 @@ define([
 ){
   return Backbone.View.extend({
     tagName: "fieldset"
-    , initialize: function(){
+    , initialize: function(arg,collectionmodels){
       this.collection.on("add", this.render, this);
       this.collection.on("remove", this.render, this);
       this.collection.on("change", this.render, this);
@@ -20,9 +20,16 @@ define([
       PubSub.on("tempDrop", this.handleTempDrop, this);
       this.$build = $("#build");
       this.renderForm = _.template(_renderForm);
+      // 传入的数据
+      if(collectionmodels){
+        this.collection.add(JSON.parse(collectionmodels),{jump: 1});
+        this.collection.remove(this.collection.models[0]);
+      }
       this.render();
     }
-
+    , outCollection: function(){
+      return JSON.stringify(this.collection.models);
+    }
     , render: function(){
       //Render Snippet Views
       this.$el.empty();
@@ -31,14 +38,16 @@ define([
       _.each(this.collection.renderAll(), function(snippet){
         that.$el.append(snippet);
       });
-      $("#render").val(that.renderForm({
+
+      // 在此输出数据
+
+      $("#render").html(that.renderForm({
         multipart: this.collection.containsFileType(),
         text: _.map(this.collection.renderAllClean(), function(e){return e.html()}).join("\n")
       }));
       this.$el.appendTo("#build form");
       this.delegateEvents();
     }
-
     , getBottomAbove: function(eventY){
       var myFormBits = $(this.$el.find(".component"));
       var topelement = _.find(myFormBits, function(renderedSnippet) {
@@ -57,6 +66,7 @@ define([
     }
 
     , handleSnippetDrag: function(mouseEvent, snippetModel) {
+      // 移除元素
       $("body").append(new TempSnippetView({model: snippetModel}).render());
       this.collection.remove(snippetModel);
       PubSub.trigger("newTempPostRender", mouseEvent);
@@ -75,6 +85,7 @@ define([
     }
 
     , handleTempDrop: function(mouseEvent, model, index){
+      // 增加元素
       if(mouseEvent.pageX >= this.$build.position().left &&
          mouseEvent.pageX < (this.$build.width() + this.$build.position().left) &&
          mouseEvent.pageY >= this.$build.position().top &&
