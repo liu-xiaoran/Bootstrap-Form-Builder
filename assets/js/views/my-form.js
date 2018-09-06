@@ -53,7 +53,8 @@ define([
     , getBottomAbove: function(eventY){
       var myFormBits = $(this.$el.find(".component"));
       var topelement = _.find(myFormBits, function(renderedSnippet) {
-        if (($(renderedSnippet).position().top + $(renderedSnippet).height()) > eventY  - 90) {
+        // 此处增加160是我的项目页面头部有全局的160，没有头部的可以删去才正常
+        if (($(renderedSnippet).position().top+160 + $(renderedSnippet).height()) > eventY  - 90) {
           return true;
         }
         else {
@@ -76,10 +77,11 @@ define([
 
     , handleTempMove: function(mouseEvent){
       $(".target").removeClass("target");
-      if(mouseEvent.pageX >= this.$build.position().left &&
-          mouseEvent.pageX < (this.$build.width() + this.$build.position().left) &&
-          mouseEvent.pageY >= this.$build.position().top &&
-          mouseEvent.pageY < (this.$build.height() + this.$build.position().top)){
+      // 此处增加160是我的项目页面头部有全局的160，没有头部的可以删去才正常。左边增加260同理
+      if(mouseEvent.pageX >= this.$build.position().left+260 &&
+          mouseEvent.pageX < (this.$build.width() + this.$build.position().left+260) &&
+          mouseEvent.pageY >= this.$build.position().top+160 &&
+          mouseEvent.pageY < (this.$build.height() + this.$build.position().top+160)){
         $(this.getBottomAbove(mouseEvent.pageY)).addClass("target");
       } else {
         $(".target").removeClass("target");
@@ -88,10 +90,11 @@ define([
 
     , handleTempDrop: function(mouseEvent, model, index){
       // 增加元素
-      if(mouseEvent.pageX >= this.$build.position().left &&
-         mouseEvent.pageX < (this.$build.width() + this.$build.position().left) &&
-         mouseEvent.pageY >= this.$build.position().top &&
-         mouseEvent.pageY < (this.$build.height() + this.$build.position().top)) {
+      // 此处增加160是我的项目页面头部有全局的160，没有头部的可以删去才正常。左边增加260同理
+      if(mouseEvent.pageX >= this.$build.position().left+260 &&
+         mouseEvent.pageX < (this.$build.width() + this.$build.position().left+260) &&
+         mouseEvent.pageY >= this.$build.position().top+160 &&
+         mouseEvent.pageY < (this.$build.height() + this.$build.position().top+160)) {
         var index = $(".target").index();
         $(".target").removeClass("target");
         this.collection.add(model,{at: index+1});

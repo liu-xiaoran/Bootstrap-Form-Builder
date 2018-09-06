@@ -33,3 +33,9 @@ It's hosted on github pages [here](https://github.com/liu-xiaoran/Bootstrap-Form
 * If you want to add a new tab, you'll also need to adjust the [ app.js file ] to make sure the tab is loaded.
 
 Don't forget to switch to main.js rather than main-built.js, or the changes you make before compiling with require.js won't show up!
+
+
+## 注：
+代码内有些没来得及改成支持bootstrap3的，在templates文件夹里把你要用的改掉就行了。
+views文件内的my-form.js根据个人的项目原因，做了一个改动，对着注释删去即可。
+输出和修改函数，简单的暴露在main.js里面
