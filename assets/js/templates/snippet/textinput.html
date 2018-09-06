@@ -1,13 +1,13 @@
 <!-- Text input-->
 <div class="form-group" style="padding:3%;">
-  <label for="<%- id %>"><%- label %></label>
-  <div class="form-control">
+  <label for="<%- id %>"><%- label %> <% if(required) {%><span style="color:red;">*</span><%} %></label>
+  <div class="">
     <input id="<%- id %>"
     	name="<%- id %>"
     	type="text"
     	<% if(placeholder) { %> placeholder="<%- placeholder %>" <% } %>
-    	class="<%- inputsize %>"
-    	<% if(required) {%> required <% } %>
+    	class="form-control"
+    	<% if(required) {%> required="required" <% } %>
     />
     <% if (helptext.length > 0) { %><p class="help-block"><%- helptext %></p><% } %>
   </div>

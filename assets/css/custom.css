@@ -10,10 +10,6 @@ body {
   }
 }
 
-#components {
-  min-height: 500px;
-}
-
 #target fieldset {
   border: 1px solid #ccc;
   min-height: 200px;
@@ -29,17 +25,9 @@ input {
   cursor: pointer;
 }
 
-textarea {
-  resize: vertical;
-}
-
-.popover {
-  z-index: 9999999;
-}
-.popover .control-group {
+.popover .form-group {
   cursor: default;
 }
-
 .popover input {
   cursor: text;
 }
@@ -62,7 +50,6 @@ textarea {
   background: white;
   box-shadow: 0px 0px 30px #999;
   -webkit-transition: -webkit-transform 0.1s ease-out;
-  overflow: hidden;
 }
 
 #render{
@@ -108,7 +95,12 @@ form .popover form {
  user-select: none;
 }
 
-#target fieldset{
- width: 100%;
- overflow: hidden;
+.tab-pane{
+	margin-top: 15px;
+}
+label{
+	font-weight: normal;
+}
+.submit{
+  margin-top: 10%;
 }

@@ -40,11 +40,13 @@ define([
       });
 
       // 在此输出数据
-
-      $("#render").html(that.renderForm({
+      var renderHtml = that.renderForm({
         multipart: this.collection.containsFileType(),
         text: _.map(this.collection.renderAllClean(), function(e){return e.html()}).join("\n")
-      }));
+      });
+      console.log(renderHtml);
+      
+      $("#render").html(renderHtml);
       this.$el.appendTo("#build form");
       this.delegateEvents();
     }

@@ -26,42 +26,6 @@
         "label": "必填",
         "type": "checkbox",
         "value": false
-      },
-      "inputsize": {
-        "label": "输入框大小",
-        "type": "select",
-        "value": [
-          {
-            "value": "input-mini",
-            "label": "Mini",
-            "selected": false
-          },
-          {
-            "value": "input-small",
-            "label": "Small",
-            "selected": false
-          },
-          {
-            "value": "input-medium",
-            "label": "Medium",
-            "selected": false
-          },
-          {
-            "value": "input-large",
-            "label": "Large",
-            "selected": false
-          },
-          {
-            "value": "input-xlarge",
-            "label": "Xlarge",
-            "selected": true
-          },
-          {
-            "value": "input-xxlarge",
-            "label": "Xxlarge",
-            "selected": false
-          }
-        ]
       }
     }
   },

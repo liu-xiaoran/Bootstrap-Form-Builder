@@ -1,6 +1,8 @@
-# Bootstrap Form Builder
+# Bootstrap3 Form Builder
 
 The project needs to add a form control that allows customization, but there is nothing similar on the Internet. So I found a version that has stopped updating but the completion is good. I will improve it and put it on GitHub for everyone to change and use. [Original address](https://github.com/minikomi/Bootstrap-Form-Builder)
+
+### Support bootstrap3. Exposes import and export functions.
 
 ## What's this?
 
