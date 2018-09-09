@@ -38,13 +38,14 @@ define([
       _.each(this.collection.renderAll(), function(snippet){
         that.$el.append(snippet);
       });
+      // 测试
+      // console.log(JSON.stringify(this.collection.models));
 
       // 在此输出数据
       var renderHtml = that.renderForm({
         multipart: this.collection.containsFileType(),
         text: _.map(this.collection.renderAllClean(), function(e){return e.html()}).join("\n")
       });
-      console.log(renderHtml);
       
       $("#render").html(renderHtml);
       this.$el.appendTo("#build form");
