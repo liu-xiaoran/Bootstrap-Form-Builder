@@ -60,15 +60,15 @@ require([ 'app/app'], function(app){
         contentType: "application/json; charset=utf-8",
         success: function(data) {
             if(data&&data.code==200){
-              if(data.is_error){
-                alert(data.msg);
+              if(data.data.is_error){
+                alert(data.data.msg);
                 return;
               }
-                alert("保存成功");
-                location.href = document.referrer;
-                return;
+              alert("保存成功");
+              location.href = document.referrer;
+              return;
             }
-            alert(data.msg);
+            alert(JSON.stringify(data));
         },
         error: function () {
             alert('服务器错误');
