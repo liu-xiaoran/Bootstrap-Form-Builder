@@ -55,11 +55,15 @@ require([ 'app/app'], function(app){
     }
     $.ajax({
         type: "POST",
-        url: isEdit?"***":"***",
+        url: isEdit?"/admin/survey/edit":"/admin/survey/add",
         data: JSON.stringify(data),
         contentType: "application/json; charset=utf-8",
         success: function(data) {
             if(data&&data.code==200){
+              if(data.is_error){
+                alert(data.msg);
+                return;
+              }
                 alert("保存成功");
                 location.href = document.referrer;
                 return;

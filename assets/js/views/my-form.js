@@ -23,7 +23,6 @@ define([
       // 传入的数据
       if(collectionmodels){
         this.collection.add(JSON.parse(collectionmodels),{jump: 1});
-        this.collection.remove(this.collection.models[0]);
       }
       this.render();
     }

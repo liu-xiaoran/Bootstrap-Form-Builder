@@ -53,22 +53,7 @@ define([
       // 定义数据
       that.myForm = new MyFormView({
         title: "Original", 
-        collection: new MyFormSnippetsCollection([
-          { "title" : "Form Name", 
-            "fields": {
-              "id": {
-                "label": "ID / Name",
-                "type": "input-readonly",
-                "value": "formName"
-              },
-              "name" : {
-                "label"   : "输入名称"
-                , "type"  : "input"
-                , "value" : "表单名称"
-              }
-            }
-          }
-        ])
+        collection: new MyFormSnippetsCollection()
       });
     },
     outFunction: function(){
