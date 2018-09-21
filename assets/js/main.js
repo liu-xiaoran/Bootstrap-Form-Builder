@@ -55,7 +55,7 @@ require([ 'app/app'], function(app){
     }
     $.ajax({
         type: "POST",
-        url: isEdit?"/admin/survey/edit":"/admin/survey/add",
+        url: isEdit?"***":"***",
         data: JSON.stringify(data),
         contentType: "application/json; charset=utf-8",
         success: function(data) {
