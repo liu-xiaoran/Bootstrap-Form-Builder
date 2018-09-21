@@ -38,4 +38,4 @@ Don't forget to switch to main.js rather than main-built.js, or the changes you 
 ## 注：
 代码内有些没来得及改成支持bootstrap3的，在templates文件夹里把你要用的改掉就行了。
 views文件内的my-form.js根据个人的项目原因，做了一个改动，对着注释删去即可。
-输出和修改函数，简单的暴露在main.js里面
+输出和修改函数，简单的暴露在main.js里面.
